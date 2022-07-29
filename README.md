@@ -1,1 +1,1 @@
-# coffee_in_hawaii
+# specialty-coffee-oahu
