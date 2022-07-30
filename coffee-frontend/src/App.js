@@ -5,6 +5,9 @@ const App = () => {
   return (
     <>
       <Header title="hello"/>
+      <h1 className="text-3xl font-bold underline">
+        Hello World
+      </h1>
     </>
   )
 }
