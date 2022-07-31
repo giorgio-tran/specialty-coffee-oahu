@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Header = ({title}) => {
+const Header = () => {
     return (
-        <div> {title} </div>
+        <div>
+            <div> Specialty Coffee Oahu </div>
+        </div>
     )
 }
 
