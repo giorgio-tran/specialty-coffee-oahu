@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Content from './components/Content'
 import Header from './components/Header'
 
@@ -18,9 +19,20 @@ const App = () => {
     
   ]
 
+  const [newFilter, setNewFilter] = useState('')
+
+  const handleFilterChange = (event) => {
+      setNewFilter(event.target.value)
+  }
+  console.log(newFilter)
+  
   return (
     <>
-      <Header title="hello" />
+      <Header 
+        title="Specialty Coffee Oahu" 
+        inputValue={newFilter}
+        onChangeFunction={handleFilterChange}
+      />
       <Content />
     </>
   )

@@ -1,11 +1,14 @@
 import React from 'react'
 import Search from './Search'
 
-const Header = () => {
+const Header = ({title, inputValue, onChangeFunction}) => {
     return (
         <div>
-            <div> Specialty Coffee Oahu </div>
-            <Search />
+            <div> {title} </div>
+            <Search 
+                inputVal={inputValue}
+                onChangeFn={onChangeFunction}
+            />
         </div>
     )
 }
