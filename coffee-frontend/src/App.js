@@ -36,7 +36,9 @@ const App = () => {
         inputValue={newFilter}
         onChangeFunction={handleFilterChange}
       />
-      <Content />
+      <Content 
+        content_cafes={cafesList}
+      />
     </>
   )
 }
