@@ -3,7 +3,7 @@ import Content from './components/Content'
 import Header from './components/Header'
 
 const App = () => {
-  const cafes = [
+  const cafesList = [
     {
       name: 'Alii Coffee',
       website: 'https://www.aliicoffee.com/',
@@ -18,13 +18,16 @@ const App = () => {
     },
     
   ]
-
+  //states
   const [newFilter, setNewFilter] = useState('')
+  const [cafes, setCafes] = useState([])
 
   const handleFilterChange = (event) => {
       setNewFilter(event.target.value)
   }
-  console.log(newFilter)
+  const handleCafes = (event) => {
+      setCafes(cafesList)
+  }
   
   return (
     <>
