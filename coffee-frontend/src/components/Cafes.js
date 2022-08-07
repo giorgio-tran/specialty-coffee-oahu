@@ -1,5 +1,4 @@
 import React from 'react'
-import Add from './Add'
 
 const Cafes = ({listOfCafes, cafeListFilter}) => {
     const filterByCafeName = listOfCafes.filter((cafe) => 
