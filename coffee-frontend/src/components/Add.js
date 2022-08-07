@@ -1,7 +1,9 @@
 import React from 'react'
 
 const Add = () => {
-    return 
+    return (
+        <button> + </button>
+    )
 }
 
 export default Add

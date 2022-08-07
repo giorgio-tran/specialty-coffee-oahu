@@ -1,14 +1,19 @@
 import React from 'react'
 import Add from './Add'
 
-const Cafes = ({Cafes}) => {
+const Cafes = ({listOfCafes, cafeListFilter}) => {
+    const filterByCafeName = listOfCafes.filter((cafe) => 
+        cafe.name
+            .toLowerCase()
+            .includes(cafeListFilter.toLowerCase())
+    )
 
     return (
-        <>
-            <Add />
-            
-        </>
-
+        filterByCafeName.map(cafe => 
+            <button key={cafe.name}>
+                {cafe.name}
+            </button>
+        )
     )
 }
 
