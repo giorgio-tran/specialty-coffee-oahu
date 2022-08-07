@@ -22,6 +22,7 @@ const App = () => {
   //states
   const [newFilter, setNewFilter] = useState('')
   const [cafes, setCafes] = useState([])
+  const [addIsOpen, setAddIsOpen] = useState(false)
 
   const handleFilterChange = (event) => {
       setNewFilter(event.target.value)
@@ -40,6 +41,9 @@ const App = () => {
         onChangeFunction={handleFilterChange}
       />
       <Content 
+        content_add_openState={addIsOpen}
+        content_add_openModal={() => setAddIsOpen(true)}
+        content_add_closeModal={() => setAddIsOpen(false)}
         content_cafes={cafesList}
         content_filter={newFilter}
       />
