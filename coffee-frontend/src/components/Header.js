@@ -3,7 +3,7 @@ import Search from './Search'
 
 const Header = ({title, inputValue, onChangeFunction}) => {
     return (
-        <div>
+        <div className='flex justify-between'>
             <div> {title} </div>
             <Search 
                 inputVal={inputValue}
