@@ -6,9 +6,11 @@ const AddModal = ({ open, children, close_AddModal }) => {
     }
     //allows modal to overlap rest of code, which is in root
     return(
-        <div className='text 3xl'>
-            <button onClick={close_AddModal}> x </button>
-            {children}
+        <div className='fixed w-screen h-screen flex justify-center items-center'>
+            <div>
+                <button className='border-solid border-2' onClick={close_AddModal}> x </button>
+                {children}
+            </div>
         </div>
     )
 }

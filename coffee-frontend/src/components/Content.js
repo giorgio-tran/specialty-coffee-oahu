@@ -10,7 +10,7 @@ const Content = ({content_cafes,
     content_add_closeModal}) => {
 
     return (
-        <div>
+        <div className='flex gap-4'>
             <Add 
                 add_openState={content_add_openState}
                 add_openModal={content_add_openModal}
