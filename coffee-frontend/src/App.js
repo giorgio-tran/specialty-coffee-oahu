@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
+import cafesList from './dummyData'
 import Content from './components/Content'
 import Header from './components/Header'
-import cafesList from './dummyData'
-import './index.css'
+import AddModal from './components/AddModal'
 import CafeModal from './components/CafeModal'
+import './index.css'
 
 const App = () => {
 
@@ -18,8 +19,8 @@ const App = () => {
   }
 
   const handleCafes = () => {
-      setCafes(cafesList)
-      console.log(cafes)
+    setCafes(cafesList)
+    console.log(cafes)
   }
   
   return (
@@ -31,12 +32,15 @@ const App = () => {
           onChangeFunction={handleFilterChange}
         />
         <Content 
-          content_add_openState={addIsOpen}
-          content_add_openModal={() => setAddIsOpen(true)}
-          content_add_closeModal={() => setAddIsOpen(false)}
-          content_cafes={cafesList}
-          content_filter={newFilter}
-          content_cafe_openCafeModal={() => setCafeIsOpen(true)}
+          cafes={cafesList}
+          filter={newFilter}
+          openAddModal={() => setAddIsOpen(true)}
+          openCafeModal={() => setCafeIsOpen(true)}
+        />
+        <AddModal 
+          open={addIsOpen}
+          close={() => setAddIsOpen(false)}
+          children='testing'
         />
         <CafeModal 
           open={cafeIsOpen}

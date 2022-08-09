@@ -1,15 +1,14 @@
 import React from 'react'
-import AddModal from './AddModal'
 
-const Add = ({add_openState, add_openModal, add_closeModal}) => {
+const Add = ({openAddModal}) => {
     return (
         <>
-            <button className='border-2 border-black rounded w-10' onClick={add_openModal}> + </button>
-                <AddModal 
+            <button className='border-2 border-black rounded w-10' onClick={openAddModal}> + </button>
+                {/* <AddModal 
                     open={add_openState} 
                     children="Add Modal" 
                     close_AddModal={add_closeModal}
-                />
+                /> */}
         </>
     )
 }
