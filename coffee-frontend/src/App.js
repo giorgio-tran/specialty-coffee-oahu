@@ -13,15 +13,18 @@ const App = () => {
   const [cafes, setCafes] = useState([])
   const [addIsOpen, setAddIsOpen] = useState(false)
   const [cafeIsOpen, setCafeIsOpen] = useState(false)
+  const [cafeId, setCafeId] = useState(0)
 
   const handleFilterChange = (event) => {
       setNewFilter(event.target.value)
   }
 
-  const handleCafes = () => {
-    setCafes(cafesList)
-    console.log(cafes)
+  const handleCafe = (event) => {
+    setCafeId(event.target.id)
+    setCafeIsOpen(true)
   }
+
+  const selectedCafe = cafesList[cafeId]
   
   return (
     <div className='w-screen h-screen flex justify-center'>
@@ -35,17 +38,16 @@ const App = () => {
           cafes={cafesList}
           filter={newFilter}
           openAddModal={() => setAddIsOpen(true)}
-          openCafeModal={() => setCafeIsOpen(true)}
+          getIdAndOpenModal={handleCafe}
         />
         <AddModal 
           open={addIsOpen}
           close={() => setAddIsOpen(false)}
-          children='testing'
         />
         <CafeModal 
           open={cafeIsOpen}
           close={() => setCafeIsOpen(false)}
-          children='hello world'
+          children={selectedCafe.name}
         />
       </div>
     </div>

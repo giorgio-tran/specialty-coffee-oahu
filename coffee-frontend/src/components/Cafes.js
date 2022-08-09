@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cafes = ({listOfCafes, cafeListFilter, openCafeModal}) => {
+const Cafes = ({listOfCafes, cafeListFilter, getIdAndOpenModal}) => {
     const filterByCafeName = listOfCafes.filter((cafe) => 
         cafe.name
             .toLowerCase()
@@ -9,7 +9,7 @@ const Cafes = ({listOfCafes, cafeListFilter, openCafeModal}) => {
 
     return (
         filterByCafeName.map(cafe => 
-            <button key={cafe.name} onClick={openCafeModal}>
+            <button key={cafe.name} id={listOfCafes.indexOf(cafe)} onClick={getIdAndOpenModal}>
                 {cafe.name}
             </button>
         )
