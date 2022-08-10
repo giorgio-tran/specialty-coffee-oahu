@@ -8,8 +8,10 @@ const CafeModal = ({open, close, children}) => {
         return null
     }
     const modalAppearance =
-        <div>
-            <button onClick={close}> x </button>
+        <div className='flex flex-col h-1/2 w-1/2 bg-white pt-0 px-4 rounded-md'>
+            <div className='flex justify-end'>
+                <button onClick={close}> x </button>
+            </div>
             <CafeInfo cafe={children} />
         </div>
     
