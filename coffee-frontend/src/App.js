@@ -1,5 +1,5 @@
-import { useState, useRef } from 'react'
-import cafesList from './dummyData'
+import { useState, useEffect } from 'react'
+import cafeService from './services/cafes'
 import Content from './components/Content'
 import Header from './components/Header'
 import AddModal from './components/AddModal'
@@ -15,6 +15,15 @@ const App = () => {
   const [cafeIsOpen, setCafeIsOpen] = useState(false)
   const [cafeId, setCafeId] = useState(0)
 
+  useEffect(() => {
+    cafeService
+      .getAll()
+      .then(response => {
+        console.log('test passed')
+        setCafes(response.data)
+      })
+  }, [])
+
   const handleFilterChange = (event) => {
       setNewFilter(event.target.value)
   }
@@ -24,7 +33,7 @@ const App = () => {
     setCafeIsOpen(true)
   }
 
-  const selectedCafe = cafesList[cafeId]
+  const selectedCafe = cafes[cafeId]
   
   return (
     <div className='w-screen h-screen flex justify-center'>
@@ -35,7 +44,7 @@ const App = () => {
           onChangeFunction={handleFilterChange}
         />
         <Content 
-          cafes={cafesList}
+          cafes={cafes}
           filter={newFilter}
           openAddModal={() => setAddIsOpen(true)}
           getIdAndOpenModal={handleCafe}
