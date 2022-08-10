@@ -43,6 +43,7 @@ const App = () => {
         <AddModal 
           open={addIsOpen}
           close={() => setAddIsOpen(false)}
+          children='hello'
         />
         <CafeModal 
           open={cafeIsOpen}
