@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import cafesList from './dummyData'
 import Content from './components/Content'
 import Header from './components/Header'
@@ -47,7 +47,7 @@ const App = () => {
         <CafeModal 
           open={cafeIsOpen}
           close={() => setCafeIsOpen(false)}
-          children={selectedCafe.name}
+          children={selectedCafe}
         />
       </div>
     </div>

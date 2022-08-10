@@ -1,6 +1,7 @@
 import React from 'react'
-import Modal from './Modal'
 import ReactDOM from 'react-dom'
+import Modal from './Modal'
+import CafeInfo from './CafeInfo'
 
 const CafeModal = ({open, close, children}) => {
     if (!open) {
@@ -9,7 +10,7 @@ const CafeModal = ({open, close, children}) => {
     const modalAppearance =
         <div>
             <button onClick={close}> x </button>
-            {children}
+            <CafeInfo cafe={children} />
         </div>
     
     return ReactDOM.createPortal (
