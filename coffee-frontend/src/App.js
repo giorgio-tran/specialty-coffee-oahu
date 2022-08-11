@@ -14,6 +14,7 @@ const App = () => {
   const [addIsOpen, setAddIsOpen] = useState(false)
   const [cafeIsOpen, setCafeIsOpen] = useState(false)
   const [cafeId, setCafeId] = useState(0)
+  const [test, setTest] = useState('')
 
   useEffect(() => {
     cafeService
@@ -52,7 +53,6 @@ const App = () => {
         <AddModal 
           open={addIsOpen}
           close={() => setAddIsOpen(false)}
-          children='hello'
         />
         <CafeModal 
           open={cafeIsOpen}
