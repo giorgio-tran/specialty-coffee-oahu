@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputForm = ({ name, onChange}) => {
+const InputForm = ({ name, onChange }) => {
     return (
         <div>
             <label htmlFor={name}> {name} </label>

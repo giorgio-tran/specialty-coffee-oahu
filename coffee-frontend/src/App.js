@@ -14,13 +14,13 @@ const App = () => {
   const [addIsOpen, setAddIsOpen] = useState(false)
   const [cafeIsOpen, setCafeIsOpen] = useState(false)
   const [cafeId, setCafeId] = useState(0)
-  const [test, setTest] = useState('')
+  const [cafeObj, setCafeObj] = useState('')
 
   useEffect(() => {
     cafeService
       .getAll()
       .then(response => {
-        console.log('test passed')
+        console.log('connected to db')
         setCafes(response.data)
       })
   }, [])
@@ -53,6 +53,10 @@ const App = () => {
         <AddModal 
           open={addIsOpen}
           close={() => setAddIsOpen(false)}
+          handleCafeSubmission={(event, cafeObj) => {
+            console.log(cafeObj)
+            setCafeObj(cafeObj)
+          }}
         />
         <CafeModal 
           open={cafeIsOpen}

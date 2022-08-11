@@ -8,18 +8,12 @@ const AddModal = ({ open, close, handleCafeSubmission }) => {
 	const [website, setWebsite] = useState('')
 	const [location, setLocation] = useState('')
 	const [description, setDescription] = useState('')
-	const [cafe, setCafe] = useState({})
 
 	const cafeObj = {
 		name: name,
 		website: website,
 		location: location,
 		description: description,
-	}
-	
-	const cafeSubmission = (event) => {
-		event.preventDefault()
-		handleCafeSubmission(event, cafeObj)
 	}
 
 	const handleName = event => setName(event.target.value)
@@ -44,16 +38,18 @@ const AddModal = ({ open, close, handleCafeSubmission }) => {
 					</div>
 					{/* Content */}
 					<div>
-						<form onSubmit={(event) => {
+						{/* passes cafeObj to parent */}
+						<form onSubmit={event => {
 							event.preventDefault()
-							console.log('submitted')
-						}}>
+							handleCafeSubmission(event, cafeObj)
+						}
+						}>
 							<InputForm name='name' onChange={handleName} />
 							<InputForm name='website' onChange={handleWebsite} />
 							<InputForm name='location' onChange={handleLocation} />
 							<InputForm name='description' onChange={handleDescription} />
 							<div className='flex justify-end gap-2 mb-2'>
-								<button className='border-box border-2 border-black' onClick={close}> cancel </button>
+								<button className='border-box border-2 border-black' type='button' onClick={close}> cancel </button>
 								<button type='submit' className='border-box border-2 border-black'> add </button>
 							</div>
 						</form>
