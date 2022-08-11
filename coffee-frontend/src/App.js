@@ -13,7 +13,7 @@ const App = () => {
   const [cafes, setCafes] = useState([])
   const [addIsOpen, setAddIsOpen] = useState(false)
   const [cafeIsOpen, setCafeIsOpen] = useState(false)
-  const [cafeId, setCafeId] = useState(0)
+  const [cafeIndex, setCafeIndex] = useState(0)
 
   useEffect(() => {
     cafeService
@@ -32,15 +32,14 @@ const App = () => {
       .create(cafe)
       .then(returnedCafe => {
         setCafes(cafes.concat(returnedCafe))
-        console.log(`added ${cafe.toString()}`)
+        console.log(`added ${returnedCafe.toString()}`)
       })
   }
+
   const handleCafe = (event) => {
-    setCafeId(event.target.id)
+    setCafeIndex(event.target.id)
     setCafeIsOpen(true)
   }
-
-  const selectedCafe = cafes[cafeId]
   
   return (
     <div className='w-screen h-screen flex justify-center'>
@@ -54,7 +53,7 @@ const App = () => {
           cafes={cafes}
           filter={newFilter}
           openAddModal={() => setAddIsOpen(true)}
-          getIdAndOpenModal={handleCafe}
+          onClickCafe={handleCafe}
         />
         <AddModal 
           open={addIsOpen}
@@ -64,7 +63,7 @@ const App = () => {
         <CafeModal 
           open={cafeIsOpen}
           close={() => setCafeIsOpen(false)}
-          children={selectedCafe}
+          cafe={cafes[cafeIndex]}
         />
       </div>
     </div>

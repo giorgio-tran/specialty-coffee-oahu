@@ -6,7 +6,7 @@ const Content = ({
     cafes,
     filter,
     openAddModal,
-    getIdAndOpenModal
+    onClickCafe
 }) => {
 
     return (
@@ -17,7 +17,7 @@ const Content = ({
             <Cafes
                 listOfCafes={cafes}
                 cafeListFilter={filter}
-                getIdAndOpenModal={getIdAndOpenModal}
+                onClickCafe={onClickCafe}
             />
         </div>
     )

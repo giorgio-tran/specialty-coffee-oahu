@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Modal from './Modal'
 import CafeInfo from './CafeInfo'
 
-const CafeModal = ({open, close, children}) => {
+const CafeModal = ({open, close, cafe}) => {
     if (!open) {
         return null
     }
@@ -12,7 +12,7 @@ const CafeModal = ({open, close, children}) => {
             <div className='flex justify-end'>
                 <button onClick={close}> x </button>
             </div>
-            <CafeInfo cafe={children} />
+            <CafeInfo cafe={cafe} />
         </div>
     
     return ReactDOM.createPortal (
