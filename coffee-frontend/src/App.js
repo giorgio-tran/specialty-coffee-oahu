@@ -14,7 +14,7 @@ const App = () => {
   const [addIsOpen, setAddIsOpen] = useState(false)
   const [cafeIsOpen, setCafeIsOpen] = useState(false)
   const [cafeId, setCafeId] = useState(0)
-  const [cafeObj, setCafeObj] = useState('')
+  const [cafeObj, setCafeObj] = useState(null)
 
   useEffect(() => {
     cafeService
