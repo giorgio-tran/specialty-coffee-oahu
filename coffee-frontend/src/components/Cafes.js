@@ -9,7 +9,7 @@ const Cafes = ({listOfCafes, cafeListFilter, getIdAndOpenModal}) => {
 
     return (
         filterByCafeName.map(cafe => 
-            <button key={cafe.name} id={listOfCafes.indexOf(cafe)} onClick={getIdAndOpenModal}>
+            <button key={cafe.id} id={cafe.id} onClick={getIdAndOpenModal}>
                 {cafe.name}
             </button>
         )

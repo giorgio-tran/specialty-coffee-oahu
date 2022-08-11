@@ -14,7 +14,6 @@ const App = () => {
   const [addIsOpen, setAddIsOpen] = useState(false)
   const [cafeIsOpen, setCafeIsOpen] = useState(false)
   const [cafeId, setCafeId] = useState(0)
-  const [cafeObj, setCafeObj] = useState(null)
 
   useEffect(() => {
     cafeService
@@ -28,7 +27,14 @@ const App = () => {
   const handleFilterChange = (event) => {
       setNewFilter(event.target.value)
   }
-
+  const handleCafeSubmission = (event, cafe) => {
+    cafeService
+      .create(cafe)
+      .then(returnedCafe => {
+        setCafes(cafes.concat(returnedCafe))
+        console.log(`added ${cafe.toString()}`)
+      })
+  }
   const handleCafe = (event) => {
     setCafeId(event.target.id)
     setCafeIsOpen(true)
@@ -53,10 +59,7 @@ const App = () => {
         <AddModal 
           open={addIsOpen}
           close={() => setAddIsOpen(false)}
-          handleCafeSubmission={(event, cafeObj) => {
-            console.log(cafeObj)
-            setCafeObj(cafeObj)
-          }}
+          handleCafeSubmission={handleCafeSubmission}
         />
         <CafeModal 
           open={cafeIsOpen}

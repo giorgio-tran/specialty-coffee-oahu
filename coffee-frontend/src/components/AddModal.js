@@ -9,11 +9,15 @@ const AddModal = ({ open, close, handleCafeSubmission }) => {
 	const [location, setLocation] = useState('')
 	const [description, setDescription] = useState('')
 
+	const randomId = () => {
+		return Math.floor(Math.random() * 100000)
+	}
 	const cafeObj = {
 		name: name,
 		website: website,
 		location: location,
 		description: description,
+		id: randomId
 	}
 	
 	const handleOnSubmit = event => {
