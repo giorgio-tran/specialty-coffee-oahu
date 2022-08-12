@@ -4,6 +4,7 @@ import Content from './components/Content'
 import Header from './components/Header'
 import AddModal from './components/Add/AddModal'
 import CafeModal from './components/Cafe/CafeModal'
+import EditModal from './components/Edit/EditModal'
 import './index.css'
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
   const [newFilter, setNewFilter] = useState('')
   const [cafes, setCafes] = useState([])
   const [addIsOpen, setAddIsOpen] = useState(false)
+  const [editIsOpen, setEditIsOpen] = useState(false)
   const [cafeIsOpen, setCafeIsOpen] = useState(false)
   const [cafeIndex, setCafeIndex] = useState(0)
 
@@ -35,7 +37,9 @@ const App = () => {
         console.log(`added ${returnedCafe.toString()}`)
       })
   }
-
+  const handleEditSubmission = (event) => {
+    console.log(event.target.id)
+  }
   const handleDelete = (event) => {
     event.preventDefault()
     cafeService
@@ -44,6 +48,9 @@ const App = () => {
       setCafeIsOpen(false)
       setCafes(cafes.filter(cafe => cafe.id !== parseInt(event.target.id)))
     })
+  }
+  const handleEdit = () => {
+    setEditIsOpen(true)
   }
   const handleCafe = (event) => {
     setCafeIndex(event.target.id)
@@ -74,6 +81,12 @@ const App = () => {
           close={() => setCafeIsOpen(false)}
           cafe={cafes.filter(cafe => cafe.id === parseInt(cafeIndex))[0]}
           handleDelete={handleDelete}
+          handleEdit={handleEdit}
+        />
+        <EditModal
+          open={editIsOpen}
+          close={() => setEditIsOpen(false)}
+          handleEditSubmission={handleEditSubmission}
         />
       </div>
     </div>

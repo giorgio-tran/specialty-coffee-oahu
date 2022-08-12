@@ -22,11 +22,25 @@
       "id": 3
     },
     {
-      "name": "Test Cafe",
-      "website": "google.com",
-      "location": "Alaska",
-      "description": "Nice",
+      "name": "TEst",
+      "website": "test",
+      "location": "test",
+      "description": "test",
       "id": 4
+    },
+    {
+      "name": "test",
+      "website": "test",
+      "location": "test",
+      "description": "test",
+      "id": 5
+    },
+    {
+      "name": "test",
+      "website": "test",
+      "location": "test",
+      "description": "test",
+      "id": 6
     }
   ]
 }

@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import InputForm from './InputForm'
 
-const AddModal = ({ open, close, handleCafeSubmission }) => {
+const EditModal = ({ open, close, handleEditSubmission }) => {
 	const [name, setName] = useState('')
 	const [website, setWebsite] = useState('')
 	const [location, setLocation] = useState('')
@@ -18,7 +18,7 @@ const AddModal = ({ open, close, handleCafeSubmission }) => {
 	
 	const handleOnSubmit = event => {
 		event.preventDefault()
-		handleCafeSubmission(event, cafeObj)
+		handleEditSubmission(event, cafeObj)
 		event.target.reset()
 	}
 	const handleName = event => setName(event.target.value)
@@ -51,7 +51,7 @@ const AddModal = ({ open, close, handleCafeSubmission }) => {
 						<InputForm name='description' onChange={handleDescription} />
 						<div className='flex justify-end gap-2 mb-2'>
 							<button className='border-box border-2 border-black' type='button' onClick={close}> cancel </button>
-							<button type='submit' className='border-box border-2 border-black'> add </button>
+							<button type='submit' className='border-box border-2 border-black'> save </button>
 						</div>
 					</form>
 				</div>
@@ -62,4 +62,4 @@ const AddModal = ({ open, close, handleCafeSubmission }) => {
     )
 }
 
-export default AddModal
+export default EditModal
