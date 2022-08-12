@@ -20,48 +20,6 @@
       "description": "blank",
       "location": "Macau",
       "id": 3
-    },
-    {
-      "name": "Cafe 2",
-      "website": "blank",
-      "description": "blank",
-      "location": "Washington",
-      "id": 4
-    },
-    {
-      "name": "Cafe 3",
-      "website": "blank",
-      "description": "blank",
-      "location": "Ireland",
-      "id": 5
-    },
-    {
-      "name": "Cafe 4",
-      "website": "blank",
-      "description": "blank",
-      "location": "Portland",
-      "id": 6
-    },
-    {
-      "name": "test",
-      "website": "test",
-      "location": "test",
-      "description": "test",
-      "id": 7
-    },
-    {
-      "name": "test",
-      "website": "test",
-      "location": "test",
-      "description": "test",
-      "id": 8
-    },
-    {
-      "name": "cafe",
-      "website": "cafe",
-      "location": "cafe",
-      "description": "cafe",
-      "id": 9
     }
   ]
 }

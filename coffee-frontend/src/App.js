@@ -18,9 +18,9 @@ const App = () => {
   useEffect(() => {
     cafeService
       .getAll()
-      .then(response => {
+      .then(initialCafes => {
         console.log('connected to db')
-        setCafes(response.data)
+        setCafes(initialCafes)
       })
   }, [])
 
@@ -36,6 +36,15 @@ const App = () => {
       })
   }
 
+  const handleDelete = (event) => {
+    event.preventDefault()
+    cafeService
+    .remove(event.target.id)
+    .then(() => {
+      setCafeIsOpen(false)
+      setCafes(cafes.filter(cafe => cafe.id !== parseInt(event.target.id)))
+    })
+  }
   const handleCafe = (event) => {
     setCafeIndex(event.target.id)
     setCafeIsOpen(true)
@@ -63,7 +72,8 @@ const App = () => {
         <CafeModal 
           open={cafeIsOpen}
           close={() => setCafeIsOpen(false)}
-          cafe={cafes[cafeIndex]}
+          cafe={cafes.filter(cafe => cafe.id === parseInt(cafeIndex))[0]}
+          handleDelete={handleDelete}
         />
       </div>
     </div>

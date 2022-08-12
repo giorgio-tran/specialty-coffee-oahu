@@ -7,12 +7,22 @@ const Cafes = ({listOfCafes, cafeListFilter, onClickCafe}) => {
             .includes(cafeListFilter.toLowerCase())
     )
 
-    return (
-        filterByCafeName.map(cafe => 
-            <button key={listOfCafes.indexOf(cafe)} id={listOfCafes.indexOf(cafe)} onClick={onClickCafe}>
-                {cafe.name}
-            </button>
+    const mapArray = (array) => {
+        return (
+            array.map(cafe => 
+                <button key={cafe.id} id={cafe.id} onClick={onClickCafe}>
+                    {cafe.name}
+                </button>
+            )
         )
+    }
+
+    return (
+        <div>
+        {cafeListFilter === null
+            ? mapArray(listOfCafes)
+            : mapArray(filterByCafeName)}
+        </div>
     )
 }
 

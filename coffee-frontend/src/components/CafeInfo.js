@@ -1,6 +1,8 @@
 import React from 'react'
 
-const CafeInfo = ({ cafe }) => {
+const CafeInfo = ({ cafe, handleDelete, handleEdit }) => {
+
+    console.log('cafe', cafe)
     return (
         <div>
             <a href={cafe.website} target='_blank' rel='noopener noreferrer'>
@@ -11,6 +13,14 @@ const CafeInfo = ({ cafe }) => {
             </div>
             <div>
                 {cafe.location}
+            </div>
+            <div className='flex gap-2'>
+                <button id={cafe.id} className='border-2 border-black' onClick={handleDelete}> 
+                        delete 
+                </button>
+                <button className='border-2 border-black' onClick={handleEdit}> 
+                    edit 
+                </button>
             </div>
         </div>
     )
