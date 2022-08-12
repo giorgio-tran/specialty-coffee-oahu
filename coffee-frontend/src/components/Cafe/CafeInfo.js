@@ -1,8 +1,6 @@
 import React from 'react'
 
 const CafeInfo = ({ cafe, handleDelete, handleEdit }) => {
-
-    console.log('cafe', cafe)
     return (
         <div>
             <a href={cafe.website} target='_blank' rel='noopener noreferrer'>

@@ -1,6 +1,6 @@
 import React from 'react'
-import Add from './Add'
-import Cafes from './Cafes'
+import Add from './Add/Add'
+import Cafes from './Cafe/Cafes'
 
 const Content = ({
     cafes,

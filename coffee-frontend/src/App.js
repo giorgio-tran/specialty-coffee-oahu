@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import cafeService from './services/cafes'
 import Content from './components/Content'
 import Header from './components/Header'
-import AddModal from './components/AddModal'
-import CafeModal from './components/CafeModal'
+import AddModal from './components/Add/AddModal'
+import CafeModal from './components/Cafe/CafeModal'
 import './index.css'
 
 const App = () => {

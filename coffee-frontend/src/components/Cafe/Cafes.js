@@ -18,7 +18,7 @@ const Cafes = ({listOfCafes, cafeListFilter, onClickCafe}) => {
     }
 
     return (
-        <div>
+        <div className='flex gap-2'>
         {cafeListFilter === null
             ? mapArray(listOfCafes)
             : mapArray(filterByCafeName)}
