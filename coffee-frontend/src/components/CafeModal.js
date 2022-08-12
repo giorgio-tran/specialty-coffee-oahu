@@ -13,6 +13,14 @@ const CafeModal = ({open, close, cafe}) => {
                 <button onClick={close}> x </button>
             </div>
             <CafeInfo cafe={cafe} />
+            <div className='flex gap-2'>
+                <button className='border-2 border-black'> 
+                        delete 
+                </button>
+                <button className='border-2 border-black'> 
+                    edit 
+                </button>
+            </div>
         </div>
     
     return ReactDOM.createPortal (
