@@ -27,20 +27,6 @@
       "location": "test",
       "description": "test",
       "id": 4
-    },
-    {
-      "name": "test",
-      "website": "test",
-      "location": "test",
-      "description": "test",
-      "id": 5
-    },
-    {
-      "name": "test",
-      "website": "test",
-      "location": "test",
-      "description": "test",
-      "id": 6
     }
   ]
 }

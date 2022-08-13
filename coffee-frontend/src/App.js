@@ -15,8 +15,8 @@ const App = () => {
   const [addIsOpen, setAddIsOpen] = useState(false)
   const [editIsOpen, setEditIsOpen] = useState(false)
   const [cafeIsOpen, setCafeIsOpen] = useState(false)
-  const [cafeIndex, setCafeIndex] = useState(0)
-
+  const [cafeId, setCafeId] = useState(0)
+  //connects to json database
   useEffect(() => {
     cafeService
       .getAll()
@@ -25,10 +25,11 @@ const App = () => {
         setCafes(initialCafes)
       })
   }, [])
-
+  
   const handleFilterChange = (event) => {
       setNewFilter(event.target.value)
   }
+
   const handleCafeSubmission = (event, cafe) => {
     cafeService
       .create(cafe)
@@ -37,9 +38,26 @@ const App = () => {
         console.log(`added ${returnedCafe.toString()}`)
       })
   }
-  const handleEditSubmission = (event) => {
-    console.log(event.target.id)
+
+  const handleEditSubmission = (event, cafe) => {
+    cafeService
+      .update(cafeId, cafe)
+      .then(
+        //update the list of cafes
+        returnedCafe => {
+        setCafes(cafes.map(cafe => 
+          cafe.id !== parseInt(cafeId)
+            ? cafe
+            : returnedCafe
+          ))
+        }
+      )
+      .then(() => {
+        //close modal
+        setEditIsOpen(false)
+      })
   }
+
   const handleDelete = (event) => {
     event.preventDefault()
     cafeService
@@ -49,11 +67,13 @@ const App = () => {
       setCafes(cafes.filter(cafe => cafe.id !== parseInt(event.target.id)))
     })
   }
+
   const handleEdit = () => {
     setEditIsOpen(true)
   }
+
   const handleCafe = (event) => {
-    setCafeIndex(event.target.id)
+    setCafeId(event.target.id)
     setCafeIsOpen(true)
   }
   
@@ -79,7 +99,7 @@ const App = () => {
         <CafeModal 
           open={cafeIsOpen}
           close={() => setCafeIsOpen(false)}
-          cafe={cafes.filter(cafe => cafe.id === parseInt(cafeIndex))[0]}
+          cafe={cafes.filter(cafe => cafe.id === parseInt(cafeId))[0]}
           handleDelete={handleDelete}
           handleEdit={handleEdit}
         />
