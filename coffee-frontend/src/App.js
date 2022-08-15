@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import cafeService from './services/cafes'
 import Content from './components/Content'
 import Header from './components/Header'
@@ -27,7 +27,7 @@ const App = () => {
   }, [])
   
   const handleFilterChange = (event) => {
-      setNewFilter(event.target.value)
+    setNewFilter(event.target.value)
   }
 
   const handleCafeSubmission = (event, cafe) => {
@@ -45,10 +45,10 @@ const App = () => {
       .then(
         //update the list of cafes
         returnedCafe => {
-        setCafes(cafes.map(cafe => 
-          cafe.id !== parseInt(cafeId)
-            ? cafe
-            : returnedCafe
+          setCafes(cafes.map(cafe => 
+            cafe.id !== parseInt(cafeId)
+              ? cafe
+              : returnedCafe
           ))
         }
       )
@@ -61,11 +61,11 @@ const App = () => {
   const handleDelete = (event) => {
     event.preventDefault()
     cafeService
-    .remove(event.target.id)
-    .then(() => {
-      setCafeIsOpen(false)
-      setCafes(cafes.filter(cafe => cafe.id !== parseInt(event.target.id)))
-    })
+      .remove(event.target.id)
+      .then(() => {
+        setCafeIsOpen(false)
+        setCafes(cafes.filter(cafe => cafe.id !== parseInt(event.target.id)))
+      })
   }
 
   const handleEdit = () => {
