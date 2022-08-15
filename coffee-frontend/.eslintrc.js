@@ -1,21 +1,29 @@
 module.exports = {
-  env: {
-    browser: true,
-    commonjs: true,
-    es2021: true,
-    node: true,
+  'settings': {
+    'react': {
+      'version': 'detect'
+    }
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
-  overrides: [],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+  'env': {
+    'browser': true,
+    'commonjs': true,
+    'es2021': true,
+    'node': true,
   },
-  plugins: ['react'],
-  rules: {
-    indent: ['error', 2],
+  'extends': [
+    'eslint:recommended', 
+    'plugin:react/recommended'
+  ],
+  'parserOptions': {
+    'ecmaVersion': 'latest',
+    'sourceType': 'module',
+  },
+  'plugins': ['react'],
+  'rules': {
+    'indent': ['error', 2],
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
-    semi: ['error', 'never'],
+    'quotes': ['error', 'single'],
+    'semi': ['error', 'never'],
+    'react/prop-types': 'off'
   },
 }
