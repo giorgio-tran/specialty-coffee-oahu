@@ -12,10 +12,10 @@ const App = () => {
   //states
   const [newFilter, setNewFilter] = useState('')
   const [cafes, setCafes] = useState([])
+  const [cafeId, setCafeId] = useState(0)
   const [addIsOpen, setAddIsOpen] = useState(false)
   const [editIsOpen, setEditIsOpen] = useState(false)
   const [cafeIsOpen, setCafeIsOpen] = useState(false)
-  const [cafeId, setCafeId] = useState(0)
   //connects to json database
   useEffect(() => {
     cafeService
