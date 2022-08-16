@@ -5,7 +5,7 @@ const CafeInfo = ({ cafe, handleDelete, handleEdit }) => {
   const API_KEY = process.env.REACT_APP_API_KEY
   const PARAMETERS = cafe.location + cafe.name
   const url = `https://www.google.com/maps/embed/v1/${MAP_MODE}?key=${API_KEY}&q=${PARAMETERS}`
-  console.log(API_KEY)
+
   return (
     <div>
       <a href={cafe.website} target='_blank' rel='noopener noreferrer'>
@@ -19,10 +19,10 @@ const CafeInfo = ({ cafe, handleDelete, handleEdit }) => {
       </div>
       <div className='flex gap-2'>
         <button id={cafe.id} className='border-2 border-black' onClick={handleDelete}> 
-                        delete 
+          delete 
         </button>
         <button className='border-2 border-black' onClick={handleEdit}> 
-                    edit 
+          edit 
         </button>
       </div>
     </div>
