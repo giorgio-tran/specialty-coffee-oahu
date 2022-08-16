@@ -3,7 +3,7 @@ import React from 'react'
 const CafeInfo = ({ cafe, handleDelete, handleEdit }) => {
   const MAP_MODE = 'place'
   const API_KEY = process.env.REACT_APP_API_KEY
-  const PARAMETERS = cafe.location
+  const PARAMETERS = cafe.location + cafe.name
   const url = `https://www.google.com/maps/embed/v1/${MAP_MODE}?key=${API_KEY}&q=${PARAMETERS}`
   console.log(API_KEY)
   return (
