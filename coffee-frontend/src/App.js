@@ -46,7 +46,7 @@ const App = () => {
         //update the list of coffeeShops
         returnedCoffeeShop => {
           setCoffeeShops(coffeeShops.map(coffeeShop => 
-            coffeeShop.id === coffeeShopId
+            coffeeShop.id !== coffeeShopId
               ? coffeeShop
               : returnedCoffeeShop
           ))
