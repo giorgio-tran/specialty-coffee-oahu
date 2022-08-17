@@ -19,6 +19,20 @@ coffeeShopsRouter.get('/:id', (request, response, next) => {
         .catch(error => next(error))
 })
 
+coffeeShopsRouter.put('/:id', (request, response, next) => {
+  const { name, website, description, location } = request.body
+
+  CoffeeShop.findByIdAndUpdate(
+    request.params.id,
+    { name, website, description, location },
+    { new: true, runValidators: true, context: 'query' }
+  )
+  .then(updatedCoffeeShop => {
+    response.json(updatedCoffeeShop)
+  })
+  .catch(error => next(error))
+})
+
 coffeeShopsRouter.post('/', (request, response, next) => {
     const body = request.body
 

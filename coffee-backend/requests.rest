@@ -10,3 +10,15 @@ Content-Type: application/json
   "description": "nice",
   "location": "wakanda"
 }
+
+###
+PUT http://localhost:3001/api/coffeeShops/62fd421b8fa613cce3dd3111
+Content-Type: application/json
+
+{
+  "name": "edited",
+  "website": "google.com",
+  "description": "nice",
+  "location": "Kakaako"
+}
+
