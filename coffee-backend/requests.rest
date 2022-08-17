@@ -1,0 +1,13 @@
+GET http://localhost:3001/
+
+###
+POST http://localhost:3001/api/cafes
+Content-Type: application/json
+
+{
+  "name": "Test Cafe",
+  "website": "google.com",
+  "description": "nice",
+  "location": "wakanda"
+
+}
