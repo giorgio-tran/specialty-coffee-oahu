@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
 
-//cafe schema
-const cafeSchema = new mongoose.Schema({
+//coffeeShop schema
+const coffeeShopSchema = new mongoose.Schema({
   name: String,
   website: String,
   description: String,
   location: String,
 })
 
-cafeSchema.set('toJSON', {
+coffeeShopSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString()
     delete returnedObject._id
@@ -16,4 +16,4 @@ cafeSchema.set('toJSON', {
   }
 })
 
-module.exports = mongoose.model('Cafe', cafeSchema)
+module.exports = mongoose.model('CoffeeShop', coffeeShopSchema)
