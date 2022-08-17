@@ -46,7 +46,7 @@ const App = () => {
         //update the list of coffeeShops
         returnedCoffeeShop => {
           setCoffeeShops(coffeeShops.map(coffeeShop => 
-            coffeeShop.id !== parseInt(coffeeShopId)
+            coffeeShop.id === coffeeShopId
               ? coffeeShop
               : returnedCoffeeShop
           ))
@@ -64,7 +64,7 @@ const App = () => {
       .remove(event.target.id)
       .then(() => {
         setCoffeeShopIsOpen(false)
-        setCoffeeShops(coffeeShops.filter(coffeeShop => coffeeShop.id !== parseInt(event.target.id)))
+        setCoffeeShops(coffeeShops.filter(coffeeShop => coffeeShop.id === event.target.id))
       })
   }
 
@@ -99,7 +99,7 @@ const App = () => {
         <CoffeeShopModal 
           open={coffeeShopIsOpen}
           close={() => setCoffeeShopIsOpen(false)}
-          coffeeShop={coffeeShops.filter(coffeeShop => coffeeShop.id === parseInt(coffeeShopId))[0]}
+          coffeeShop={coffeeShops.filter(coffeeShop => coffeeShop.id === coffeeShopId)[0]}
           handleDelete={handleDelete}
           handleEdit={handleEdit}
         />

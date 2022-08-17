@@ -9,11 +9,14 @@ const CoffeeShops = ({listOfCoffeeShops, coffeeShopListFilter, onClickCoffeeShop
 
   const mapArray = (array) => {
     return (
-      array.map(coffeeShop => 
-        <button key={coffeeShop.id} id={coffeeShop.id} onClick={onClickCoffeeShop}>
-          {coffeeShop.name}
-        </button>
-      )
+      array.map(coffeeShop => {
+        console.log(coffeeShop.id)
+        return(
+          <button key={coffeeShop.id} id={coffeeShop.id} onClick={onClickCoffeeShop}>
+            {coffeeShop.name}
+          </button>
+        )
+      })
     )
   }
 
