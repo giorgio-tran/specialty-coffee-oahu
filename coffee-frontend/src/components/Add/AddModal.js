@@ -3,13 +3,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import InputForm from './InputForm'
 
-const AddModal = ({ open, close, handleCafeSubmission }) => {
+const AddModal = ({ open, close, handleCoffeeShopSubmit }) => {
   const [name, setName] = useState('')
   const [website, setWebsite] = useState('')
   const [location, setLocation] = useState('')
   const [description, setDescription] = useState('')
 
-  const cafeObj = {
+  const coffeeShopObj = {
     name: name,
     website: website,
     location: location,
@@ -18,7 +18,7 @@ const AddModal = ({ open, close, handleCafeSubmission }) => {
 	
   const handleOnSubmit = event => {
     event.preventDefault()
-    handleCafeSubmission(event, cafeObj)
+    handleCoffeeShopSubmit(event, coffeeShopObj)
     event.target.reset()
   }
   const handleName = event => setName(event.target.value)
@@ -42,7 +42,7 @@ const AddModal = ({ open, close, handleCafeSubmission }) => {
             <button className='' onClick={close}> x </button>
           </div>
           {/* Content */}
-          {/* passes cafeObj to parent */}
+          {/* passes coffeeShopObj to parent */}
           <form onSubmit={handleOnSubmit} className='flex flex-col h-full w-full justify-between'>
             <div className='flex flex-col gap-4'>
               <InputForm name='name' onChange={handleName} />

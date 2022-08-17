@@ -1,12 +1,12 @@
 import React from 'react'
 import Add from './Add/Add'
-import Cafes from './Cafe/Cafes'
+import CoffeeShops from './CoffeeShop/CoffeeShops'
 
 const Content = ({
-  cafes,
+  coffeeShops,
   filter,
   openAddModal,
-  onClickCafe
+  onClickCoffeeShop
 }) => {
 
   return (
@@ -14,10 +14,10 @@ const Content = ({
       <Add 
         openAddModal={openAddModal}
       />
-      <Cafes
-        listOfCafes={cafes}
-        cafeListFilter={filter}
-        onClickCafe={onClickCafe}
+      <CoffeeShops
+        listOfCoffeeShops={coffeeShops}
+        coffeeShopListFilter={filter}
+        onClickCoffeeShop={onClickCoffeeShop}
       />
     </div>
   )

@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import CafeInfo from './CafeInfo'
+import CoffeeShopInfo from './CoffeeShopInfo'
 
-const CafeModal = ({open, close, cafe, handleDelete, handleEdit}) => {
+const CoffeeShopModal = ({open, close, coffeeShop, handleDelete, handleEdit}) => {
   if (!open) {
     return null
   }
@@ -15,8 +15,8 @@ const CafeModal = ({open, close, cafe, handleDelete, handleEdit}) => {
           <div className='flex justify-end'>
             <button onClick={close}> x </button>
           </div>
-          <CafeInfo 
-            cafe={cafe} 
+          <CoffeeShopInfo 
+            coffeeShop={coffeeShop} 
             handleDelete={handleDelete}
             handleEdit={handleEdit}
           />
@@ -27,4 +27,4 @@ const CafeModal = ({open, close, cafe, handleDelete, handleEdit}) => {
   )
 }
 
-export default CafeModal
+export default CoffeeShopModal

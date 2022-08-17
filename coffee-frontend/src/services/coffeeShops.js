@@ -1,18 +1,18 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/cafes'
+const baseUrl = 'http://localhost:3001/coffeeShops'
 
 const getAll = () => {
   const request = axios.get(baseUrl)
   return request.then(response => response.data)
 }
 
-const create = newCafe => {
-  const request = axios.post(baseUrl, newCafe)
+const create = newCoffeeShop => {
+  const request = axios.post(baseUrl, newCoffeeShop)
   return request.then(response => response.data)
 }
 
-const update = (id, newCafe) => {
-  const request = axios.put(`${baseUrl}/${id}`, newCafe)
+const update = (id, newCoffeeShop) => {
+  const request = axios.put(`${baseUrl}/${id}`, newCoffeeShop)
   return request.then(response => response.data)
 }
 

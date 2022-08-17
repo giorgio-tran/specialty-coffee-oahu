@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import cafeService from './services/cafes'
+import coffeeShopService from './services/coffeeShops'
 import Content from './components/Content'
 import Header from './components/Header'
 import AddModal from './components/Add/AddModal'
-import CafeModal from './components/Cafe/CafeModal'
+import CoffeeShopModal from './components/CoffeeShop/CoffeeShopModal'
 import EditModal from './components/Edit/EditModal'
 import './index.css'
 
@@ -11,18 +11,18 @@ const App = () => {
 
   //states
   const [newFilter, setNewFilter] = useState('')
-  const [cafes, setCafes] = useState([])
-  const [cafeId, setCafeId] = useState(0)
+  const [coffeeShops, setCoffeeShops] = useState([])
+  const [coffeeShopId, setCoffeeShopId] = useState(0)
   const [addIsOpen, setAddIsOpen] = useState(false)
   const [editIsOpen, setEditIsOpen] = useState(false)
-  const [cafeIsOpen, setCafeIsOpen] = useState(false)
+  const [coffeeShopIsOpen, setCoffeeShopIsOpen] = useState(false)
   //connects to json database
   useEffect(() => {
-    cafeService
+    coffeeShopService
       .getAll()
-      .then(initialCafes => {
+      .then(initialCoffeeShops => {
         console.log('connected to db')
-        setCafes(initialCafes)
+        setCoffeeShops(initialCoffeeShops)
       })
   }, [])
   
@@ -30,25 +30,25 @@ const App = () => {
     setNewFilter(event.target.value)
   }
 
-  const handleCafeSubmission = (event, cafe) => {
-    cafeService
-      .create(cafe)
-      .then(returnedCafe => {
-        setCafes(cafes.concat(returnedCafe))
-        console.log(`added ${returnedCafe.toString()}`)
+  const handleCoffeeShopSubmit = (event, coffeeShop) => {
+    coffeeShopService
+      .create(coffeeShop)
+      .then(returnedCoffeeShop => {
+        setCoffeeShops(coffeeShops.concat(returnedCoffeeShop))
+        console.log(`added ${returnedCoffeeShop.toString()}`)
       })
   }
 
-  const handleEditSubmission = (event, cafe) => {
-    cafeService
-      .update(cafeId, cafe)
+  const handleEditSubmission = (event, coffeeShop) => {
+    coffeeShopService
+      .update(coffeeShopId, coffeeShop)
       .then(
-        //update the list of cafes
-        returnedCafe => {
-          setCafes(cafes.map(cafe => 
-            cafe.id !== parseInt(cafeId)
-              ? cafe
-              : returnedCafe
+        //update the list of coffeeShops
+        returnedCoffeeShop => {
+          setCoffeeShops(coffeeShops.map(coffeeShop => 
+            coffeeShop.id !== parseInt(coffeeShopId)
+              ? coffeeShop
+              : returnedCoffeeShop
           ))
         }
       )
@@ -60,11 +60,11 @@ const App = () => {
 
   const handleDelete = (event) => {
     event.preventDefault()
-    cafeService
+    coffeeShopService
       .remove(event.target.id)
       .then(() => {
-        setCafeIsOpen(false)
-        setCafes(cafes.filter(cafe => cafe.id !== parseInt(event.target.id)))
+        setCoffeeShopIsOpen(false)
+        setCoffeeShops(coffeeShops.filter(coffeeShop => coffeeShop.id !== parseInt(event.target.id)))
       })
   }
 
@@ -72,9 +72,9 @@ const App = () => {
     setEditIsOpen(true)
   }
 
-  const handleCafe = (event) => {
-    setCafeId(event.target.id)
-    setCafeIsOpen(true)
+  const handleCoffeeShop = (event) => {
+    setCoffeeShopId(event.target.id)
+    setCoffeeShopIsOpen(true)
   }
   
   return (
@@ -86,20 +86,20 @@ const App = () => {
           onChangeFunction={handleFilterChange}
         />
         <Content 
-          cafes={cafes}
+          coffeeShops={coffeeShops}
           filter={newFilter}
           openAddModal={() => setAddIsOpen(true)}
-          onClickCafe={handleCafe}
+          onClickCoffeeShop={handleCoffeeShop}
         />
         <AddModal 
           open={addIsOpen}
           close={() => setAddIsOpen(false)}
-          handleCafeSubmission={handleCafeSubmission}
+          handleCoffeeShopSubmit={handleCoffeeShopSubmit}
         />
-        <CafeModal 
-          open={cafeIsOpen}
-          close={() => setCafeIsOpen(false)}
-          cafe={cafes.filter(cafe => cafe.id === parseInt(cafeId))[0]}
+        <CoffeeShopModal 
+          open={coffeeShopIsOpen}
+          close={() => setCoffeeShopIsOpen(false)}
+          coffeeShop={coffeeShops.filter(coffeeShop => coffeeShop.id === parseInt(coffeeShopId))[0]}
           handleDelete={handleDelete}
           handleEdit={handleEdit}
         />
