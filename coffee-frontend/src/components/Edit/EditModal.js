@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import InputForm from './InputForm'
+import InputBox from '../Form/InputBox'
 
 const EditModal = ({ open, close, handleEditSubmission }) => {
   const [name, setName] = useState('')
@@ -45,10 +45,10 @@ const EditModal = ({ open, close, handleEditSubmission }) => {
           <div>
             {/* passes cafeObj to parent */}
             <form onSubmit={handleOnSubmit}>
-              <InputForm name='name' onChange={handleName} />
-              <InputForm name='website' onChange={handleWebsite} />
-              <InputForm name='location' onChange={handleLocation} />
-              <InputForm name='description' onChange={handleDescription} />
+              <InputBox name='name' onChange={handleName} />
+              <InputBox name='website' onChange={handleWebsite} />
+              <InputBox name='location' onChange={handleLocation} />
+              <InputBox name='description' onChange={handleDescription} />
               <div className='flex justify-end gap-2 mb-2'>
                 <button className='border-box border-2 border-black' type='button' onClick={close}> cancel </button>
                 <button type='submit' className='border-box border-2 border-black'> save </button>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputForm = ({ name, onChange }) => {
+const InputBox = ({ name, onChange }) => {
   return (
     <div>
       <label htmlFor={name}> {name} </label>
@@ -9,4 +9,4 @@ const InputForm = ({ name, onChange }) => {
   )
 }
 
-export default InputForm
+export default InputBox
