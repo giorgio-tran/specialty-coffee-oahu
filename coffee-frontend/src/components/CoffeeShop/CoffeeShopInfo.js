@@ -7,7 +7,7 @@ const CoffeeShopInfo = ({ coffeeShop, handleDelete, handleEdit }) => {
   const url = `https://www.google.com/maps/embed/v1/${MAP_MODE}?key=${API_KEY}&q=${PARAMETERS}`
 
   return (
-    <div>
+    <div className='flex flex-col p-8 gap-3'>
       <a href={coffeeShop.website} target='_blank' rel='noopener noreferrer'>
         {coffeeShop.name}
       </a>
@@ -17,7 +17,7 @@ const CoffeeShopInfo = ({ coffeeShop, handleDelete, handleEdit }) => {
       <div>
         <iframe src={url} />
       </div>
-      <div className='flex gap-2'>
+      <div className='flex gap-2 justify-end'>
         <button id={coffeeShop.id} className='border-2 border-black' onClick={handleDelete}> 
           delete 
         </button>
