@@ -24,11 +24,9 @@ const CoffeeShops = ({listOfCoffeeShops, coffeeShopListFilter, onClickCoffeeShop
   }
 
   return (
-    <div className='flex gap-2'>
-      {coffeeShopListFilter === null
-        ? mapArray(listOfCoffeeShops)
-        : mapArray(filterByCoffeeShopName)}
-    </div>
+    coffeeShopListFilter === null
+      ? mapArray(listOfCoffeeShops)
+      : mapArray(filterByCoffeeShopName)
   )
 }
 
