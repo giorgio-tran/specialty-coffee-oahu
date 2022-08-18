@@ -35,7 +35,6 @@ const App = () => {
       .create(coffeeShop)
       .then(returnedCoffeeShop => {
         setCoffeeShops(coffeeShops.concat(returnedCoffeeShop))
-        console.log(`added ${returnedCoffeeShop.toString()}`)
       })
   }
 
