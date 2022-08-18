@@ -77,7 +77,7 @@ const App = () => {
   }
   
   return (
-    <div className='w-screen h-screen flex justify-center'>
+    <div className='w-screen h-screen flex justify-center bg-beige'>
       <div className='w-2/3'>
         <Header 
           title="Specialty Coffee Oahu" 
