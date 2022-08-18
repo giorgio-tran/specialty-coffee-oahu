@@ -11,7 +11,11 @@ const CoffeeShops = ({listOfCoffeeShops, coffeeShopListFilter, onClickCoffeeShop
     return (
       array.map(coffeeShop => {
         return(
-          <button key={coffeeShop.id} id={coffeeShop.id} onClick={onClickCoffeeShop}>
+          <button 
+            key={coffeeShop.id} 
+            id={coffeeShop.id}
+            onClick={onClickCoffeeShop}
+          >
             {coffeeShop.name}
           </button>
         )
