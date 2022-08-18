@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import InputBox from '../Form/InputBox'
+import Form from '../Form/Form'
 
 const AddModal = ({ open, close, handleCoffeeShopSubmit }) => {
   const [name, setName] = useState('')
@@ -42,19 +42,15 @@ const AddModal = ({ open, close, handleCoffeeShopSubmit }) => {
             <button className='' onClick={close}> x </button>
           </div>
           {/* Content */}
-          {/* passes coffeeShopObj to parent */}
-          <form onSubmit={handleOnSubmit} className='flex flex-col h-full w-full justify-between'>
-            <div className='flex flex-col gap-4'>
-              <InputBox name='name' onChange={handleName} />
-              <InputBox name='website' onChange={handleWebsite} />
-              <InputBox name='location' onChange={handleLocation} />
-              <InputBox name='description' onChange={handleDescription} />
-            </div>
-            <div className='flex justify-end gap-2 mb-2'>
-              <button className='border-box border-2 border-black' type='button' onClick={close}> cancel </button>
-              <button type='submit' className='border-box border-2 border-black'> add </button>
-            </div>
-          </form>
+          <Form
+            onSubmit={handleOnSubmit}
+            handleName={handleName}
+            handleWebsite={handleWebsite}
+            handleLocation={handleLocation}
+            handleDescription={handleDescription}
+            close={close}
+            enterName="add"
+          />
         </div>
       </div>
     </>,
