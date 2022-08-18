@@ -63,7 +63,7 @@ const App = () => {
       .remove(event.target.id)
       .then(() => {
         setCoffeeShopIsOpen(false)
-        setCoffeeShops(coffeeShops.filter(coffeeShop => coffeeShop.id === event.target.id))
+        setCoffeeShops(coffeeShops.filter(coffeeShop => coffeeShop.id !== event.target.id))
       })
   }
 
