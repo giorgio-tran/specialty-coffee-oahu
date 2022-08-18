@@ -16,7 +16,7 @@ const App = () => {
   const [addIsOpen, setAddIsOpen] = useState(false)
   const [editIsOpen, setEditIsOpen] = useState(false)
   const [coffeeShopIsOpen, setCoffeeShopIsOpen] = useState(false)
-  //connects to json database
+  //connects to mongoDB
   useEffect(() => {
     coffeeShopService
       .getAll()
