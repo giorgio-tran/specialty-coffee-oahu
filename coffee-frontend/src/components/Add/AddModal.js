@@ -49,7 +49,7 @@ const AddModal = ({ open, close, handleCoffeeShopSubmit }) => {
             handleLocation={handleLocation}
             handleDescription={handleDescription}
             close={close}
-            enterName="add"
+            enterName='add'
           />
         </div>
       </div>
