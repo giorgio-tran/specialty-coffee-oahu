@@ -10,7 +10,7 @@ const Content = ({
 }) => {
 
   return (
-    <div className='relative z-1 grid md:grid-cols-3 sm:grid-cols-1 gap-4 py-4 h-4/5 scrollbar overflow-y-auto'>
+    <div className='relative z-1 grid md:grid-cols-3 sm:grid-cols-1 gap-4 h-4/5 scrollbar overflow-y-auto'>
       <Add 
         openAddModal={openAddModal}
       />

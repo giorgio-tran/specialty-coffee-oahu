@@ -3,7 +3,7 @@ import Search from './Search'
 
 const Header = ({title, inputValue, onChangeFunction}) => {
   return (
-    <nav className='flex justify-between'>
+    <nav className='flex justify-between py-10'>
       <h1 className='text-3xl font-bold text-darkbrown'> 
         {title} 
       </h1>
