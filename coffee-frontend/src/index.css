@@ -7,9 +7,5 @@
   .scrollbar::-webkit-scrollbar {
     display: none;
   }
-  
-  .placeholder::-webkit-input-placeholder{
-    color: #6a4b30;
-    opacity: 1;
-  }
+
 }
