@@ -12,7 +12,7 @@ const CoffeeShops = ({listOfCoffeeShops, coffeeShopListFilter, onClickCoffeeShop
       array.map(coffeeShop => {
         return(
           <button 
-            className='bg-brown text-white'
+            className='bg-brown text-white h-44 w-64'
             key={coffeeShop.id} 
             id={coffeeShop.id}
             onClick={onClickCoffeeShop}
