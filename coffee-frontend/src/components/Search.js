@@ -3,8 +3,9 @@ import React from 'react'
 const Search = ({inputVal, onChangeFn}) => {
   return (
     <input
-      className='outline-none box-border border-2 border-black' 
+      className='outline-none bg-beige box-border border-2 border-brown rounded-3xl w-80 px-5' 
       value={inputVal} 
+      placeholder='Search...'
       onChange={onChangeFn}
     />
   )
