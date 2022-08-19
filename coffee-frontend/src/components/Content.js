@@ -10,7 +10,7 @@ const Content = ({
 }) => {
 
   return (
-    <div className='relative flex gap-4 z-1'>
+    <div className='relative grid grid-cols-3 z-1'>
       <Add 
         openAddModal={openAddModal}
       />
