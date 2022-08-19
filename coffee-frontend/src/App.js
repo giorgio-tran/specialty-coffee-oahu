@@ -5,6 +5,7 @@ import Header from './components/Header'
 import AddModal from './components/Add/AddModal'
 import CoffeeShopModal from './components/CoffeeShop/CoffeeShopModal'
 import EditModal from './components/Edit/EditModal'
+import Footer from './components/Footer/Footer'
 import './index.css'
 
 const App = () => {
@@ -77,7 +78,7 @@ const App = () => {
   }
   
   return (
-    <div className='w-screen h-screen flex justify-center bg-beige m-0'>
+    <div className='w-screen flex justify-center bg-beige m-0'>
       <div className=''>
         <Header 
           title="Specialty Coffee Oahu" 
@@ -90,6 +91,7 @@ const App = () => {
           openAddModal={() => setAddIsOpen(true)}
           onClickCoffeeShop={handleCoffeeShop}
         />
+        <Footer />
         <AddModal 
           open={addIsOpen}
           close={() => setAddIsOpen(false)}
