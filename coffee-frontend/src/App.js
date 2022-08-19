@@ -79,7 +79,7 @@ const App = () => {
   
   return (
     <div className='w-screen flex justify-center bg-beige m-0'>
-      <div className=''>
+      <div className='px-10'>
         <Header 
           title="Specialty Coffee Oahu" 
           inputValue={newFilter}
