@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         'beige': '#D9BCA3',
         'brown': '#A6754B',
+        'darkbrown': '#6a4b30',
       },
     },
   },

@@ -3,13 +3,15 @@ import Search from './Search'
 
 const Header = ({title, inputValue, onChangeFunction}) => {
   return (
-    <div className='flex justify-between'>
-      <div> {title} </div>
+    <nav className='flex justify-between'>
+      <h1 className='text-3xl font-bold text-darkbrown'> 
+        {title} 
+      </h1>
       <Search 
         inputVal={inputValue}
         onChangeFn={onChangeFunction}
       />
-    </div>
+    </nav>
   )
 }
 
