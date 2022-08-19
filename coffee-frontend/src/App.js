@@ -72,7 +72,7 @@ const App = () => {
   }
 
   const handleCoffeeShop = (event) => {
-    setCoffeeShopId(event.target.id)
+    setCoffeeShopId(event.currentTarget.id)
     setCoffeeShopIsOpen(true)
   }
   
