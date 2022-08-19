@@ -8,4 +8,7 @@
     display: none;
   }
 
+  .placeholder-italic::-webkit-input-placeholder {
+    font-style: italic;
+  }
 }
