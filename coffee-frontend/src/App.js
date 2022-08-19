@@ -78,7 +78,7 @@ const App = () => {
   
   return (
     <div className='w-screen h-screen flex justify-center bg-beige m-0'>
-      <div className='w-2/3 h-screen'>
+      <div className=''>
         <Header 
           title="Specialty Coffee Oahu" 
           inputValue={newFilter}
