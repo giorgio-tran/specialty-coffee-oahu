@@ -80,17 +80,19 @@ const App = () => {
   return (
     <div className='w-screen h-screen flex justify-center bg-beige m-0 overflow-y-auto'>
       <div className='px-10 flex flex-col justify-between'>
-        <Header 
-          title="Specialty Coffee Oahu" 
-          inputValue={newFilter}
-          onChangeFunction={handleFilterChange}
-        />
-        <Content 
-          coffeeShops={coffeeShops}
-          filter={newFilter}
-          openAddModal={() => setAddIsOpen(true)}
-          onClickCoffeeShop={handleCoffeeShop}
-        />
+        <div>
+          <Header 
+            title="Specialty Coffee Oahu" 
+            inputValue={newFilter}
+            onChangeFunction={handleFilterChange}
+          />
+          <Content 
+            coffeeShops={coffeeShops}
+            filter={newFilter}
+            openAddModal={() => setAddIsOpen(true)}
+            onClickCoffeeShop={handleCoffeeShop}
+          />
+        </div>
         <Footer />
         <AddModal 
           open={addIsOpen}
