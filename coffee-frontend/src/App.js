@@ -78,8 +78,8 @@ const App = () => {
   }
   
   return (
-    <div className='w-screen flex justify-center bg-beige m-0'>
-      <div className='px-10'>
+    <div className='w-screen h-screen flex justify-center bg-beige m-0'>
+      <div className='px-10 flex flex-col justify-between'>
         <Header 
           title="Specialty Coffee Oahu" 
           inputValue={newFilter}
