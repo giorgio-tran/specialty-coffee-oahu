@@ -78,7 +78,7 @@ const App = () => {
   }
   
   return (
-    <div className='w-screen h-screen flex justify-center bg-beige m-0 overflow-y-auto'>
+    <div className='w-screen h-screen flex justify-center bg-beige m-0 overflow-y-scroll scrollbar'>
       <div className='px-10 flex flex-col justify-between'>
         <div>
           <Header 
