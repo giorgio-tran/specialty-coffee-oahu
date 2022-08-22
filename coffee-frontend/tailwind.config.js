@@ -10,6 +10,9 @@ module.exports = {
         'brown': '#A6754B',
         'darkbrown': '#6a4b30',
       },
+      screens: {
+        'xs': {'min': '300px', 'max': '640px'}
+      }
     },
   },
   plugins: [],
