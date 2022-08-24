@@ -3,7 +3,12 @@ import InputBox from './InputBox'
 
 const Form = ({ onSubmit, handleName, handleWebsite, handleLocation, handleDescription, close, enterName}) => {
   return (
-    <form onSubmit={onSubmit}>
+    <form className=''
+      onSubmit={onSubmit}
+    >
+      <div className='flex justify-end'>
+        <button className='' onClick={close} type='button'> x </button>
+      </div>
       <InputBox name='name' onChange={handleName} />
       <InputBox name='website' onChange={handleWebsite} />
       <InputBox name='location' onChange={handleLocation} />
