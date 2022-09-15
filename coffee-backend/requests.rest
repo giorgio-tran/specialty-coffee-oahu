@@ -10,6 +10,8 @@ Content-Type: application/json
   "description": "nice",
   "location": "wakanda"
 }
+###
+GET http://localhost:3001/api/coffeeShops
 
 ###
 PUT http://localhost:3001/api/coffeeShops/62fd421b8fa613cce3dd3111
